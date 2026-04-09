@@ -1,13 +1,13 @@
 import type { TodoItem } from '../App';
 
-const TodoList = ({ todos, onToggleTodo, onDeleteTodo }: { todos: TodoItem[], onToggleTodo: (id: string) => void, onDeleteTodo: (id: string) => void }) => {
+const TodoList = ({ todos, onToggleTodo, onDeleteTodo, onCompleteTodo }: { todos: TodoItem[], onToggleTodo: (id: string) => void, onDeleteTodo: (id: string) => void, onCompleteTodo: (id: string) => void }) => {
    
   return (
     <div className="w-96 mx-auto mt-6 space-y-2">
       {todos.map((todo) => (
         <div key={todo.id} 
         className="flex items-center gap-3 p-3 ">
-          <input type="checkbox" checked={todo.completed} 
+          <input type="checkbox" checked={}
            onChange={() => onToggleTodo(todo.id)}
            />
           <span className="text-gray-800 text-md">{todo.title}</span>
