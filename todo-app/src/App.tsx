@@ -11,7 +11,7 @@ export interface TodoItem {
 
 function App() {
   const [todos, setTodos] = useState<TodoItem[]>([
-    { id: '1', title: 'Sample Todo', completed: false }
+    
   ]);
 
   const handleAddTodo = (newTodo: TodoItem) => {
@@ -24,11 +24,15 @@ function App() {
     ));
   };
 
+  const handleDeleteTodo = (id: string) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
+
   return (
     <>
       <h1 className='text-center text-gray-200 text-9xl py-5'>todos</h1>
       <CreateTodo onAddTodo={handleAddTodo} />
-      <TodoList todos={todos} onToggleTodo={handleToggleTodo} />
+      <TodoList todos={todos} onToggleTodo={handleToggleTodo} onDeleteTodo={handleDeleteTodo} />
     </>
   )
 }
