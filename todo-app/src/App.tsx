@@ -27,11 +27,7 @@ function App() {
   const handleDeleteTodo = (id: string) => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
-  // const handleCompleteTodo = (id: string) => {
-  //   setTodos(todos.map(todo => 
-  //     todo.id === id ? { ...todo, completed: true } : todo
-  //   ));
-  // }
+
 
   return (
     <>

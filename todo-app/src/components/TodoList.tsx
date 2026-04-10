@@ -1,6 +1,6 @@
 import type { TodoItem } from '../App';
 
-const TodoList = ({ todos, onToggleTodo, onDeleteTodo}: { todos: TodoItem[], onToggleTodo: (id: string) => void, onDeleteTodo: (id: string) => void, onCompleteTodo: (id: string) => void }) => {
+const TodoList = ({ todos, onToggleTodo, onDeleteTodo}: { todos: TodoItem[], onToggleTodo: (id: string) => void, onDeleteTodo: (id: string) => void}) => {
    
   return (
     <div className="w-96 mx-auto mt-6 space-y-2">
