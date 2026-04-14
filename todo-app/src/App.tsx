@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import CreateTodo from './components/CreateTodo';
 import TodoList from './components/TodoList';
+import type { TodoItem } from './components/types';
 import './App.css'
 
-export interface TodoItem {
-  id: string;
-  title: string;
-  completed: boolean;
-}
+
 
 function App() {
   const [todos, setTodos] = useState<TodoItem[]>([
@@ -15,17 +12,17 @@ function App() {
   ]);
 
   const handleAddTodo = (newTodo: TodoItem) => {
-    setTodos([...todos, newTodo]);
+    setTodos(prev => [...prev, newTodo]);
   };
 
   const handleToggleTodo = (id: string) => {
-    setTodos(todos.map(todo => 
+    setTodos(prev => prev.map(todo => 
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
   };
 
   const handleDeleteTodo = (id: string) => {
-    setTodos(todos.filter(todo => todo.id !== id));
+    setTodos(prev => prev.filter(todo => todo.id !== id));
   };
 
 
